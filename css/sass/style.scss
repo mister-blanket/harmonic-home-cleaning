@@ -1,14 +1,19 @@
-// VARIABLE SETUP
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,800|Roboto);
+@use './media' as *;
 
-$text-main: #f8f8f8;
-$text-body: #f8f8f8;
-$text-accent: #f4e1e1;
-$link: #5af;
-$background: #9c4b41;
-$font1: 'Montserrat', sans-serif;
+// VARIABLE SETUP
+@import url(https://fonts.googleapis.com/css2?family=Redressed&family=Roboto:ital,wght@0,200..900;1,200..900&display=swap);
+
+$text-main: #333;
+$text-body: #555;
+$text-accent: #f52423;
+$link: #f52423;
+$link--hover: #db0a0a;
+$background: #fff;
+$font1: 'Redressed', cursive;
 $font2: 'Roboto', sans-serif;
 $shadow: 0px 5px 16px rgba(0,0,0,0.3);
+$margin-bottom: 2%;
+$transition: .25s;
 
 
 // GLOBAL SETUP
@@ -24,91 +29,24 @@ html, body {
 body {
   padding: 0px;
   text-decoration: none;
+  text-align: center;
   font-family: $font2;
   background-color: $background;
   color: $text-main;
 }
 
-// SITE CONTAINER //
-.contain {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.contain, nav {
-  width: 98vw;
-}
-
-@media (min-width: 800px) {
-  .contain {
-    width: 85vw;
-  }
-}
-
-@media (min-width: 1080px) {
-  .contain, nav {
-    width: 72vw;
-  }
-}
-
-@media (min-width: 1400px) {
-  .contain, nav {
-    width: 65vw;
-  }
-}
-
-@media (min-width: 1700px) {
-  .contain, nav {
-    width: 55vw;
-  }
-}
+// GENERAL
 
 %heading {
   margin: 0px;
-  font-family: $font1;
-  font-weight: 800;
 }
 
 h1 {
   @extend %heading;
-  font-size: 3.3em;
-}
+  font-size: 2.8em;
 
-h2 {
-  @extend %heading;
-  font-size: 2.4em;
-}
-
-h3 {
-  @extend %heading;
-  font-size: 1.9em;
-}
-
-h4, nav li {
-  @extend %heading;
-  font-size: 1.4em;
-}
-
-nav li {
-  font-style: italic;
-}
-
-@media (min-width: 600px) {
-  h1 {
-    font-size: 6em;
-  }
-
-  h2 {
-    font-size: 3.5em;
-  }
-
-  h3 {
-    font-size: 3em;
-  }
-
-  h4, nav li{
-    font-size: 1.5rem;
+  @include desktop {
+    font-size: 5rem;
   }
 }
 
@@ -120,115 +58,89 @@ p {
 a {
   text-decoration: none;
   color: $text-main;
-  max-width: 400px;
 
   &:hover {
     text-decoration: none;
     color: $link;
     transition: .15s;
   }
-
-  &:focus {
-    color: #3399ff;
-    border: none;
-  }
-
-  h4 {
-    font-style: italic;
-  }
 }
 
-.icon {
-  height: 20px;
-  width: 20px;
-}
-
-i, .icons a {
+i {
   color: $text-main;
   font-size: 2rem;
-}
+  transition: color $transition;
 
-i:hover {
-  color: $link;
-}
-
-.svg-inline--fa {
-  font-size: 1.4em;
-}
-
-// NAV //
-
-nav ul {
-  list-style: none;
-  flex-direction: column;
-  padding-left: 0px;
-
-  li a {
-    display: block;
-    padding: 14px 0px;
+  &:hover {
+    color: $link;
+    transition: color $transition;
   }
 }
 
 
 // FRONT PAGE //
 
-.front-page {
+.contain {
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 98vw;
   height: 100%;
-}
-
-#name {
-  // margin-bottom: -10px;
-}
-
-#role {
-  font-weight: 400;
-}
-
-#location {
-  letter-spacing: 7px;
-}
-
-.icons {
-  margin: 5px 0px 0px 3px;
-}
-
-.front-page__links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 30px;
-
-  @media (min-width: 600px) {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+  
+  @include desktop {
+    width: 85vw;
   }
-}
 
-.front-page__link {
-  width: 45%;
-  margin: 0px 5% 20px 0px;
-
-  @media (min-width: 600px) {
-      max-width: 145px;
+  @include desktop(large) {
+    width: 72vw;  
   }
-}
 
-// PROJECTS //
-.project-heading {
-  margin-top: 8px;
-  width: min-content;
-}
+  @include desktop(max) {
+    width: 65vw;  
+  }
 
-.project {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  margin-bottom: 4px;
+  #hp_logo {
+    height: 200px;
+  }
 
-  h4 {
-    margin-right: 5px;
+  #subtitle {
+    font-size: 1.2rem;
+    margin-bottom: $margin-bottom;
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+
+  #location {
+    font-size: 2rem;
+    letter-spacing: 7px;
+    font-family: $font1;
+    margin-bottom: $margin-bottom;
+  }
+
+  .icons {
+    margin-bottom: $margin-bottom;
+    
+    i {
+      margin: 5px 15px;
+    }
+  } 
+
+  .button {
+    background-color: $text-accent;
+    margin: 10px 5px;
+    padding: 14px 20px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    color: #fff;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: $link--hover;
+      transition: background-color $transition;
+    }
   }
 }
