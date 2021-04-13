@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/mister-blanket/portfolio/master/css/style.css" /> -->
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<!-- <link href="https://cdn.rawgit.com/mister-blanket/portfolio/master/css/fontawesome/css/all.css" rel="stylesheet"> -->
+		<link type="text/css" rel="stylesheet" href="css/fontawesome/css/all.css" />
+		<link rel="icon" href="img/logoBlack.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://unpkg.com/moving-shadow"></script>
+
+		<meta property="og:title" content="Mr. Plunkett" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mrplunkett.com" />
+		<meta property="og:description" content="UI/UX Development" />
+		<meta charset="UTF-8">
+		<title>Harmonic Home Cleaning</title>
+	</head>
+
+	<body>
+		<div class="front-page">
+			<div class="contain">
+				<h1 id="name">Harmonic Home Cleaning</h1>
+				<h2 id="role">ui/ux development</h2>
+        <h3 id="location">dallas, texas</h3>
+					<div class="icons">
+						<a href="mailto:michael@mrplunkett.com">
+							<i class="fas fa-envelope"></i>
+						</a>&nbsp;
+						<a href="https://github.com/mister-blanket">
+							<i class="fab fa-github"></i>
+						</a>&nbsp;
+						<a href="https://www.linkedin.com/in/michaelplunkett1/">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					</div>
+
+				<div class="front-page__links">
+
+					<a href="https://mister-blanket.github.io/blood-lines/" class="front-page__link">
+						<div class="front-page__link__header">
+							<h4>blood lines</h4>
+						</div>
+						<p>is a react genealogical data viewer</p>
+					</a>
+
+					<a href="https://mister-blanket.github.io/soil/" class="front-page__link">
+						<div class="front-page__link__header">
+							<h4>soil</h4>
+						</div>
+						<p>is a google maps javascript api map</p>
+					</a>
+
+					<a href="https://github.com/mister-blanket/moving-shadow" class="front-page__link">
+						<div class="front-page__link__header">
+							<h4>moving shadow</h4>
+						</div>
+						<p>is a dynamic text-shadow module</p>
+					</a>
+
+					<a href="projects/" class="front-page__link">
+						<div class="front-page__link__header">
+							<h4>gross</h4>
+						</div>
+						<p>is all projects</p>
+					</a>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>
+
+<script>
+const settings = {
+  selector: "h1", // targets class or id
+  shadowType: "perspective-shadow", // "shadow", "dropShadow", "perspective"
+  angle: 80, // Sets height of light source. Should be > 10 && < 100
+  diffusion: 0, // blur-radius
+  color: "#5af", // shadow-color
+	altColor: "#7e3d35",
+	shineColor: "#d9aba577"
+}
+
+movingShadow(settings);
+</script>
