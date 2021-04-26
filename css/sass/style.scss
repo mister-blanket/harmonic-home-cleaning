@@ -6,19 +6,19 @@
 
 @font-face {
   font-family: 'Amsterdam';
-  src: url('../../font/Amsterdam.ttf')  format('truetype');
+  src: url('../font/amsterdam.ttf')  format('truetype');
 }
 
-$text-main: #333;
-$text-body: #555;
+$text-main: #444;
+$text-body: #666;
 $text-accent: #f52423;
-$link: #0f2c0e;
 $orange: #f52423;
 $green: #0f2c0e;
+$link: #0f2c0e;
 $link--hover: #db0a0a;
 $background: #fff;
-$font1: 'Amsterdam', sans-serif;
-$font2: 'Roboto', sans-serif;
+$font_main: 'Roboto', sans-serif;
+$font_cursive: 'Amsterdam', sans-serif;
 $shadow: 0px 5px 16px rgba(0,0,0,0.3);
 $margin-bottom: 2%;
 $transition: .25s;
@@ -31,14 +31,14 @@ $transition: .25s;
 
 html, body {
   height: 100%;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body {
   padding: 0px;
   text-decoration: none;
   text-align: center;
-  font-family: $font2;
+  font-family: $font_main;
   background-color: $background;
   color: $text-main;
 }
@@ -58,20 +58,40 @@ h1 {
   }
 }
 
-p {
-  font-family: $font2;
+h4 {
+  font-weight: 400;
   color: $text-body;
+  font-size: 1.4rem;
+
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+
+p {
+  font-family: $font_main;
+  color: $text-body;
+  font-size: 1rem;
+  font-weight: 300;
+
+  @include desktop {
+    font-size: 1.3rem;
+  }
 }
 
 a {
   text-decoration: none;
-  color: $link;
+  color: $text-body;
 
   &:hover {
     text-decoration: none;
     color: $link--hover;
     transition: .15s;
   }
+}
+
+i {
+  color: $orange;
 }
 
 
@@ -83,7 +103,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 98vw;
+  width: 95vw;
   height: 100%;
   
   @include desktop {
@@ -95,35 +115,66 @@ a {
   }
 
   @include desktop(max) {
-    width: 65vw;  
+    width: 60vw;  
   }
 
   #hp_logo {
-    height: 200px;
-  }
-
-  #subtitle {
-    font-size: 1.2rem;
-    margin-bottom: $margin-bottom;
+    height: 250px;
 
     @include desktop {
-      font-size: 1.3rem;
+      height: 350px;
     }
   }
 
-  #location {
-    font-size: 2rem;
-    letter-spacing: 7px;
-    font-family: $font1;
+  h1 {
+    // font-family: $font_cursive;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  #subtitle {
     margin-bottom: $margin-bottom;
   }
 
-  #contact {
-    font-weight: 500;
-    font-size: 1rem;
+  #action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    i {
-      margin-right: 5px;
+    @include desktop {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    .button {
+      background-color: $text-accent;
+      margin: 10px 5px;
+      padding: 14px 20px;
+      border-radius: 30px;
+      font-size: 1.3rem;
+      color: #fff;
+      transition: background-color $transition;
+  
+      &:hover {
+        background-color: $link--hover;
+        transition: background-color $transition;
+      }
+    }
+
+    #contact {
+      a {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
+      
+      i {
+        margin-right: 5px;
+      }
     }
   }
 
@@ -134,19 +185,4 @@ a {
       margin: 5px 15px;
     }
   } 
-
-  .button {
-    background-color: $text-accent;
-    margin: 10px 5px;
-    padding: 14px 20px;
-    border-radius: 30px;
-    font-size: 1.3rem;
-    color: #fff;
-    transition: background-color $transition;
-
-    &:hover {
-      background-color: $link--hover;
-      transition: background-color $transition;
-    }
-  }
 }
