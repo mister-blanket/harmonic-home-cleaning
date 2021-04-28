@@ -121,7 +121,7 @@ i {
   }
 
   @include desktop(max) {
-    width: 60vw;  
+    width: 65vw;  
   }
 
   #hp_logo {
@@ -162,7 +162,7 @@ i {
     .button {
       background-color: $text-accent;
       margin: 10px 0;
-      padding: 10px;
+      padding: 10px 0;
       width: 75vw;
       border-radius: 30px;
       font-size: 1.5rem;
@@ -170,7 +170,7 @@ i {
       transition: background-color $transition;
 
       @include desktop {
-        padding: 20px;
+        padding: 20px 0;
         width: 45%;
       }
   
